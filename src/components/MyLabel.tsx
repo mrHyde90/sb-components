@@ -21,6 +21,10 @@ export interface MyLabelProps {
    * Colores personalizados del boton
    */
     fontColor?: string;
+     /**
+   * Colores personalizados del boton
+   */
+    backgroundColor?: string;
 }
 
 export const MyLabel = ({
@@ -28,10 +32,11 @@ export const MyLabel = ({
   size = 'normal',
   allCaps = false,
   color = 'primary',
-  fontColor
+  fontColor,
+  backgroundColor = 'transparent'
 }: MyLabelProps) => {
   return (
-    <span style={{ color: fontColor }} className={ `label ${ size } text-${color} ${allCaps ? 'capitalize' : ''}` }>
+    <span style={{ color: fontColor, backgroundColor }} className={ `label ${ size } text-${color} ${allCaps ? 'capitalize' : ''}` }>
       { label }
     </span>
   )
